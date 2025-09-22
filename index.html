@@ -6534,7 +6534,7 @@
 
     .inher {
       width: 80%;
-      height: 45px;
+      height: 65px;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
@@ -7390,38 +7390,38 @@
   <script>
     // ข้อมูลคณะตามระดับ
     const facultiesByLevel = {
-      "ป.ตรี-ปกติ": [
+      "ป.ตรี-ปกติ": ["ยังไม่ทราบ/ไม่แน่ใจ",
         "คณะบริหารธุรกิจ",
         "คณะสื่อสารสากล",
         "คณะวิศวกรรมศาสตร์",
         "คณะเทคโนโลยีสารสนเทศ",
         "คณะเทคโนโลยีดิจิทัลเพื่อธุรกิจอุตสาหกรรม"
       ],
-      "ป.ตรี-เทียบโอน": [
+      "ป.ตรี-เทียบโอน": ["ยังไม่ทราบ/ไม่แน่ใจ",
         "คณะบริหารธุรกิจ",
         "คณะวิศวกรรมศาสตร์",
         "คณะเทคโนโลยีสารสนเทศ",
         "คณะเทคโนโลยีดิจิทัลเพื่อธุรกิจอุตสาหกรรม"
       ],
-      "ป.โท": [
+      "ป.โท": ["ยังไม่ทราบ/ไม่แน่ใจ",
         "คณะบริหารธุรกิจแบบญี่ปุ่น",
         "คณะเทคโนโลยีสารสนเทศ",
         "คณะวิศวกรรมศาสตร์"
       ],
-      "normaldegree": [
+      "normaldegree": ["I don't know yet/I'm not sure",
         "Faculty of Business Administration",
         "Faculty of Global Communication",
         "Faculty of Engineering",
         "Faculty of Information Technology",
         "Faculty of Industrial Business Digital Technology"
       ],
-      "credittransfer": [
+      "credittransfer": ["I don't know yet/I'm not sure",
         "Faculty of Business Administration",
         "Faculty of Engineering",
         "Faculty of Information Technology",
         "Faculty of Industrial Business Digital Technology"
       ],
-      "masterdegree": [
+      "masterdegree": ["I don't know yet/I'm not sure",
         "Business Administration (Japanese Program)",
         "Information Technology",
         "Engineering"
@@ -7430,38 +7430,38 @@
 
     // ข้อมูลสาขา แยกตามระดับ + คณะ
     const majorsByLevelAndFaculty = {
-      "ป.ตรี-ปกติ": {
+      "ป.ตรี-ปกติ": {"ยังไม่ทราบ/ไม่แน่ใจ": ["ยังไม่ทราบ/ไม่แน่ใจ"],
         "คณะวิศวกรรมศาสตร์": ["วิศวกรรมยานยนต์ (AE)", "วิศวกรรมหุ่นยนต์และระบบอัตโนมัติแบบลีน (RE)", "วิศวกรรมคอมพิวเตอร์และปัญญาประดิษฐ์ (CE)", "วิศวกรรมอุตสาหการ (IE)", "วิศวกรรมไฟฟ้า (EE)", "วิศวกรรมเซมิคอนดักเตอร์ (SC)"],
         "คณะเทคโนโลยีสารสนเทศ": ["เทคโนโลยีสารสนเทศ (IT)", "เทคโนโลยีมัลติมีเดีย (MT)", "เทคโนโลยีสารสนเทศทางธุรกิจดิจิทัล (BI)", "เทคโนโลยีดิจิทัลทางสื่อสารมวลชน (DC)", "วิทยาการข้อมูลและการวิเคราะห์ข้อมูล (DS)"],
         "คณะบริหารธุรกิจ": ["การพัฒนาธุรกิจเพื่อความยั่งยืน (BD)", "บริหารธุรกิจญี่ปุ่น (BJ)", "การจัดการธุรกิจระหว่างประเทศ (IB)", "การบัญชี (AC)", "บริหารทรัพยากรมนุษย์แบบญี่ปุ่น (HR)", "การตลาดดิจิทัล (DM)", "การสร้างสรรค์ธุรกิจบริการสไตล์ญี่ปุ่น (SB)"],
         "คณะสื่อสารสากล": ["ภาษาญี่ปุ่นเพื่อธุรกิจ ระหว่างประเทศ (JIB)", "สื่อสารสากล (GLC)"],
         "คณะเทคโนโลยีดิจิทัลเพื่อธุรกิจอุตสาหกรรม": ["โลจิสติกส์และดิจิทัลซัพพลายเชน (LD)", "เทคโนโลยีดิจิทัลเพื่อธุรกิจอุตสาหกรรม (DT)"]
       },
-      "ป.โท": {
+      "ป.โท": { "ยังไม่ทราบ/ไม่แน่ใจ": ["ยังไม่ทราบ/ไม่แน่ใจ"],
         "คณะวิศวกรรมศาสตร์": ["เทคโนโลยีวิศวกรรม (MET)"],
         "คณะเทคโนโลยีสารสนเทศ": ["เทคโนโลยีสารสนเทศ (MIT)"],
         "คณะบริหารธุรกิจแบบญี่ปุ่น": ["กลุ่มแขนงการบริหารธุรกิจและภาษาญี่ปุ่น (MBJ)", "กลุ่มแขนงการสร้างสรรค์และนวัตกรรมธุรกิจ (MBI)",
           "กลุ่มแขนงการจัดการระบบการผลิตและโลจิสติกส์แบบลีน (LMS)"]
       },
-      "ป.ตรี-เทียบโอน": {
+      "ป.ตรี-เทียบโอน": { "ยังไม่ทราบ/ไม่แน่ใจ": ["ยังไม่ทราบ/ไม่แน่ใจ"],
         "คณะบริหารธุรกิจ": ["การบัญชี (AC)", "การบริหารทรัพยากรมนุษย์แบบญี่ปุ่น (HR)", "การพัฒนาธุรกิจเพื่อความยั่งยืน (BD)"],
         "คณะเทคโนโลยีสารสนเทศ": ["เทคโนโลยีสารสนเทศ (IT)", "เทคโนโลยีสารสนเทศทางธุรกิจดิจิทัล (BI)"],
         "คณะวิศวกรรมศาสตร์": ["วิศวกรรมหุ่นยนต์และระบบอัตโนมัติแบบลีน (RE)", "วิศวกรรมอุตสาหการ (IE)"],
         "คณะเทคโนโลยีดิจิทัลเพื่อธุรกิจอุตสาหกรรม": ["โลจิสติกส์และดิจิทัลซัพพลายเชน (LD)", "เทคโนโลยีดิจิทัลเพื่อธุรกิจอุตสาหกรรม (DT)"]
       },
-      "normaldegree": {
+      "normaldegree": {"I don't know yet/I'm not sure" : ["I don't know yet/I'm not sure"],
         "Faculty of Engineering": ["Automotive Engineering (AE)", "Robotics and Lean Automation Engineering (RE)", "Computer Engineering and Artificial Intelligence (CE)", "Industrial Engineering (IE)", "Electrical Engineering (EE)", "Semiconductor Engineering (SC)"],
         "Faculty of Information Technology": ["Information Technology (IT)", "Multimedia Technology (MT)", "Digital Business Information Technology (BI)", "Digital Communication Technology (DC)", "Data Science and Data Analytics (DS)"],
         "Faculty of Business Administration": ["Business Development for Sustainability (BD)", "Business Administration in Japanese (BJ)", "International Business Management (IB)", "Accounting (AC)", "Human Resource Management in Japanese (HR)", "Digital Marketing (DM)", "Service Business Creation in Japanese Style (SB)"],
         "Faculty of Global Communication": ["Japanese for International Business (JIB)", "Global Communication (GLC)"],
         "Faculty of Industrial Business Digital Technology": ["Logistics and Digital Supply Chain (LD)", "Digital Technology for Industrial Business (DT)"]
       },
-      "masterdegree": {
+      "masterdegree": { "I don't know yet/I'm not sure" : ["I don't know yet/I'm not sure"],
         "Engineering": ["Master of Engineering Technology (MET)"],
         "Information Technology": ["Master of Information Technology (MIT)"],
         "Business Administration (Japanese Program)": ["Business and Japanese Studies (MBJ)", "Business Innovation and Creation (MBI)", "Lean Manufacturing and Logistics System (LMS)"]
       },
-      "credittransfer": {
+      "credittransfer": {"I don't know yet/I'm not sure" : ["I don't know yet/I'm not sure"],
         "Faculty of Business Administration": ["Accounting (AC)", "Human Resource Management in Japanese (HR)", "Business Development for Sustainability (BD)"],
         "Faculty of Information Technology": ["Information Technology (IT)", "Digital Business Information Technology (BI)"],
         "Faculty of Engineering": ["Robotics and Lean Automation Engineering (RE)", "Industrial Engineering (IE)"],
